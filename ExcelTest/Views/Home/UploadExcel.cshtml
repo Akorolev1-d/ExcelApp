@@ -1,0 +1,14 @@
+﻿@model ExcelTest.Models.Label;
+<form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <label>Select Excel File</label>
+        <input type="file" name="file" multiple="multiple"></input>
+    </div>
+    <br></br>
+    <div class="row">
+        <div class="col-3">
+            <input type="submit" asp-controller="Home" asp-action="UploadExcel" class="btn btn-dark" value="Upload Excel File"  ></input>
+            <label for="name">@Model.Text </label>
+        </div>
+    </div>
+</form>

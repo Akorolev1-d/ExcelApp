@@ -1,0 +1,42 @@
+﻿@model Needed
+<div class="text-center">
+    <label for="name">@Model.label </label>    
+</div>
+
+<form method="post">
+    @if (@Model.buttonYears != null)
+    {
+        @foreach (var btn in @Model.buttonYears)
+        {
+
+            <input type="submit" name="button" asp-controller="Home" class="btn btn-dark" value=@btn />
+
+        }
+    }
+    
+</form>
+<br></br>
+<form method="post">
+@if (@Model.buttonMonth != null)
+{
+    @foreach (var btn in @Model.buttonMonth)
+    {
+        
+            <input type="submit" name="button" asp-controller="Home" class="btn btn-dark" value=@btn />
+         
+    }
+}
+</form>
+<br></br>
+@if (@Model.weather != null)
+{
+    @foreach (var Item in @Model.weather)
+    {
+        <div>Дата: @Item.Date Время(московкое): @Item.Time Температура @Item.Temp Влажность @Item.Humidity Точка росы @Item.PointDew Давление @Item.Pressure Направление ветра @Item.WindOrien Облачность @Item.Cloud Нижняя граница облачности @Item.h Горизонтальная видимость @Item.VV Погодные явления @Item.Weather</div>
+        <hr />
+    }
+}
+
+
+
+
